@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Note</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}">
+  </head>
+  <body>
+  	<div class="container">
+  		<div class="navbar">
+  			<ul>
+  				<li>Note</li>
+  				<li th:each="Page : ${Pages}" th:object="${Page}"><a th:href="@{/page/{id} (id=*{id})}">[[*{id}]]</a></li>
+  				<form method="POST" th:action="@{/create}">
+  					<button type="submit">+</button>
+  				</form>
+  			</ul>
+   		</div>
+  	</div>
+  </body>
+</html>
